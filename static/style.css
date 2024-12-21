@@ -1,0 +1,54 @@
+:root {
+    --cor-clara: rgb(152, 176, 200);
+    --cor-escura: rgb(24, 48, 72);
+    --cor-muito-clara: rgb(204, 216, 228);
+    --cor-muito-escura: rgb(12, 24, 36);
+    --cor-pouco-clara: rgb(100, 136, 172);
+    --cor-pouco-escura: rgb(36, 72, 108);
+    --cor-principal: rgb(48, 96, 144);
+    --familha-da-fonte: serif;
+    --margem-grande: 8px 8px 8px 8px;
+    --margem-pequena: 4px 4px 4px 4px;
+    --padding-texto: 4px 8px 4px 8px;
+    --tamanho-da-fonte: 16px;
+}
+
+a {
+    color: white;
+    cursor: pointer;
+    font-family: var(--familha-da-fonte);
+    font-size: var(--tamanho-da-fonte);
+    margin: var(--margem-grande);
+    padding: var(--padding-texto);
+    text-decoration: none;
+}
+
+a:hover {
+    background-color: var(--cor-escura);
+}
+
+a:active {
+    background-color: var(--cor-pouco-escura);
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    min-width: 100vw;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+
+nav {
+    background-color: var(--cor-muito-escura);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
