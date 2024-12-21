@@ -1,4 +1,5 @@
 bin
+databases/database.db
 include
 lib
 lib64
