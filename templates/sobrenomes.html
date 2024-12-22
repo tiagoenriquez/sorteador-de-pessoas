@@ -1,0 +1,31 @@
+{% extends "index.html" %}
+{% block content %}
+{% include "menu.html" %}
+<main>
+    <h1>Sobrenomes</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Sobrenome</th><th></th><th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for sobrenome in sobrenomes %}
+            <tr>
+                <td>{{ sobrenome.nome }}</td>
+                <td>
+                    <form action="#" method="get">
+                        <button type="submit">Atualizar</button>
+                    </form>
+                </td>
+                <td>
+                    <form action="#" method="get">
+                        <button type="submit">Excluir</button>
+                    </form>
+                </td>                
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</main>
+{% endblock %}

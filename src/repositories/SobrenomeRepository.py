@@ -16,6 +16,15 @@ def listar():
             sobrenomes.append(Sobrenome(row[0], row[1]))
         return sobrenomes
 
+def ordenar():
+    with con:
+        cur = con.cursor()
+        cur.execute("select * from sobrenomes order by nome")
+        sobrenomes: list[Sobrenome] = []
+        for row in cur.fetchall():
+            sobrenomes.append(Sobrenome(row[0], row[1]))
+        return sobrenomes
+
 def procurar(id: int):
     with con:
         cur = con.cursor()
