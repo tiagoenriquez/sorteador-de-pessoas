@@ -2,6 +2,11 @@ from src.connections.Connection import con
 from src.models.Nome import Nome
 
 
+def atualizar(nome: Nome):
+    with con:
+        con.execute("update nomes set nome = ? where id = ?", nome.to_array())
+        con.commit()
+
 def inserir(nome: str):
     with con:
         con.execute("insert into nomes (nome) values (?)", [nome])

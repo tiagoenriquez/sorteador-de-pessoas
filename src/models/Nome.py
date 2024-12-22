@@ -5,3 +5,6 @@ class Nome:
     
     def to_dict(self):
         return {"id": self.id, "nome": self.nome}
+    
+    def to_array(self):
+        return [self.nome, self.id]
