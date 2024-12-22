@@ -16,6 +16,15 @@ def listar():
             nomes.append(Nome(row[0], row[1]))
         return nomes
 
+def ordenar():
+    with con:
+        cur = con.cursor()
+        cur.execute("select * from nomes order by nome")
+        nomes: list[Nome] = []
+        for row in cur.fetchall():
+            nomes.append(Nome(row[0], row[1]))
+        return nomes
+
 def procurar(id: int):
     with con:
         cur = con.cursor()

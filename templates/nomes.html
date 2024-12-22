@@ -12,13 +12,17 @@
         <tbody>
             {% for nome in nomes %}
             <tr>
-                <td>nome.nome</td>
-                <form action="#" method="get">
-                    <button type="submit">Atualizar</button>
-                </form>
-                <form action="#" method="get">
-                    <button type="submit">Excluir</button>
-                </form>
+                <td>{{ nome.nome }}</td>
+                <td>
+                    <form action="#" method="get">
+                        <button type="submit">Atualizar</button>
+                    </form>
+                </td>
+                <td>
+                    <form action="#" method="get">
+                        <button type="submit">Excluir</button>
+                    </form>
+                </td>                
             </tr>
             {% endfor %}
         </tbody>
