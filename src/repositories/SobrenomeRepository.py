@@ -6,6 +6,11 @@ def atualizar(sobrenome: Sobrenome):
     with con:
         con.execute("update sobrenomes set nome = ? where id = ?", sobrenome.to_array())
 
+def excluir(id: int):
+    with con:
+        con.execute("delete from sobrenomes where id = ?", [id])
+        con.commit()
+
 def inserir(nome: str):
     with con:
         con.execute("insert into sobrenomes (nome) values (?)", [nome])

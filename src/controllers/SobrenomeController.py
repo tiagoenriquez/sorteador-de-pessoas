@@ -10,6 +10,11 @@ def atualizar(id: int):
     SobrenomeService.atualizar(Sobrenome(id, request.form.get("nome")))
     return redirect(url_for("sobrenome.listar"))
 
+@sobrenome_blueprint.route("/exclusao/<id>")
+def excluir(id: int):
+    SobrenomeService.excluir(id)
+    return redirect(url_for("sobrenome.listar"))
+
 @sobrenome_blueprint.route("/")
 def listar():
     return render_template("sobrenomes.html", sobrenomes=SobrenomeService.listar())

@@ -7,6 +7,11 @@ def atualizar(nome: Nome):
         con.execute("update nomes set nome = ? where id = ?", nome.to_array())
         con.commit()
 
+def excluir(id: int):
+    with con:
+        con.execute("delete from nomes where id = ?", [id])
+        con.commit()
+
 def inserir(nome: str):
     with con:
         con.execute("insert into nomes (nome) values (?)", [nome])

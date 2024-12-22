@@ -10,6 +10,11 @@ def atualizar(id: int):
     NomeService.atualizar(Nome(id, request.form.get("nome")))
     return redirect(url_for("nome.listar"))
 
+@nome_blueprint.route("/exclusao/<id>")
+def excluir(id: int):
+    NomeService.excluir(id)
+    return redirect(url_for("nome.listar"))
+
 @nome_blueprint.route("/")
 def listar():
     return render_template("nomes.html", nomes=NomeService.listar())
