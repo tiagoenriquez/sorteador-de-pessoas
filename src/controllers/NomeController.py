@@ -5,7 +5,7 @@ from src.services import NomeService
 
 nome_blueprint = Blueprint("nome", __name__, template_folder="templates", url_prefix="/nomes")
 
-@nome_blueprint.route("/atualizacao/<id>", methods=["POST", "PUT"])
+@nome_blueprint.route("/atualizacao/<id>", methods=["POST"])
 def atualizar(id: int):
     NomeService.atualizar(Nome(id, request.form.get("nome")))
     return redirect(url_for("nome.listar"))
