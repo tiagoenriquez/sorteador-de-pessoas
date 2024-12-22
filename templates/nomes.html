@@ -1,0 +1,27 @@
+{% extends "index.html" %}
+{% block content %}
+{% include "menu.html" %}
+<main>
+    <h1>Nomes</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Nome</th><th></th><th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for nome in nomes %}
+            <tr>
+                <td>nome.nome</td>
+                <form action="#" method="get">
+                    <button type="submit">Atualizar</button>
+                </form>
+                <form action="#" method="get">
+                    <button type="submit">Excluir</button>
+                </form>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</main>
+{% endblock %}

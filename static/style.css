@@ -108,6 +108,33 @@ nav {
     align-items: center;
 }
 
+table {
+    margin: var(--margem-grande);
+}
+
+tbody tr:hover {
+    background-color: var(--cor-muito-clara);
+}
+
+td {
+    font-family: var(--familha-da-fonte);
+    font-size: var(--tamanho-da-fonte);
+    padding: var(--padding-texto);
+    text-align: center;
+}
+
+th {
+    font-family: var(--familha-da-fonte);
+    font-size: var(--tamanho-da-fonte);
+    padding: var(--padding-texto);
+    text-align: center;
+    text-transform: uppercase;
+}
+
+thead {
+    background-color: var(--cor-clara);
+}
+
 .row {
     display: flex;
     flex-direction: row;

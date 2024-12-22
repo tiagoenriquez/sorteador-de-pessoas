@@ -1,3 +1,5 @@
+import random
+from src.models.Pessoa import Pessoa
 from src.repositories import NomeRepository, SobrenomeRepository
 
 
@@ -15,3 +17,13 @@ def inserir(nome: str):
     for sobrenome in sobrenomes:
         SobrenomeRepository.inserir(sobrenome)
     NomeRepository.inserir(primeiro_nome)
+
+def sortear(qtd: int):
+    pessoas: list[Pessoa] = []
+    for i in range(qtd):
+        qtd_sobrenomes = random.choice([2, 3])
+        sobrenomes: list[str] = []
+        for i in range(qtd_sobrenomes):
+            sobrenomes.append(SobrenomeRepository.procurar(random.choice(SobrenomeRepository.listar()).id).nome)
+        pessoas.append(Pessoa(NomeRepository.procurar(random.choice(NomeRepository.listar()).id).nome, sobrenomes))
+    return pessoas

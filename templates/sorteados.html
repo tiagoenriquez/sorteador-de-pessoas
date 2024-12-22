@@ -1,0 +1,31 @@
+{% extends "index.html" %}
+{% block content %}
+{% include "menu.html" %}
+<main>
+    <h1>Pessoas sorteadas</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>CPF</th>
+                <th>Telefone</th>
+                <th>E-mail</th>
+                <th>Nome de usuário</th>
+                <th>Senha</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for pessoa in pessoas %}
+            <tr>
+                <td>{{ pessoa.nome }}</td>
+                <td>{{ pessoa.cpf }}</td>
+                <td>{{ pessoa.telefone }}</td>
+                <td>{{ pessoa.email }}</td>
+                <td>{{ pessoa.usuario }}</td>
+                <td>{{ pessoa.senha }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</main>
+{% endblock %}

@@ -15,4 +15,11 @@ def criar():
 @pessoa_blueprint.route("/insercao", methods=["POST"])
 def inserir():
     PessoaService.inserir(request.form["nome"])
-    return redirect(url_for("pessoa.criar_sorteio"))
+    return redirect(url_for("pessoa.criar"))
+
+@pessoa_blueprint.route("/sorteio", methods=["POST"])
+def sortear():
+    pessoas: list[dict] = []
+    for pessoa in PessoaService.sortear(int(request.form.get("numero"))):
+        pessoas.append(pessoa.to_dict())
+    return render_template("sorteados.html", pessoas=pessoas)
